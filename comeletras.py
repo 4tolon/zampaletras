@@ -3,6 +3,8 @@ from sys import exit
 from random import randint, choice
 ## from pygame.locals import *
 
+# PLAYER CREATION
+
 class Player(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
@@ -44,6 +46,8 @@ class Player(pygame.sprite.Sprite):
 		self.apply_gravity()
 		self.animation_state()
 
+# CLOUD CREATION
+
 class Obstacle(pygame.sprite.Sprite):
 	def __init__(self,type):
 		super().__init__()
@@ -76,6 +80,8 @@ class Obstacle(pygame.sprite.Sprite):
 	def destroy(self):
 		if self.rect.x <= -100: 
 			self.kill()
+
+#SCORE CREATION
 
 def display_score():
 	current_time = int(pygame.time.get_ticks() / 1000) - start_time
